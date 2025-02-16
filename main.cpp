@@ -9,7 +9,6 @@ int main(){
         double i = n->predict({3.2,2.0});
         cout<< i << endl;
         delete n;
-    NeuronioReLU aNeuronioReLU;
 
     //entrada valores peso e bias
     Neuronio *n2 = new NeuronioReLU({0.2,0.4},-0.5);
@@ -31,16 +30,13 @@ int main(){
     double vies4 = 2.5;
 
     Neuronio *n4 = new NeuronioReLU(p4,vies4);
-
         vector<double> x4 = {1.0,4.2};
-        
         double i4 = n4 -> predict(x4);
-
         cout<< i4 << endl;
     delete n4;
 
     // declaração externa de pesos, bias e entradas
-    double p5a = 0.;
+    double p5a = 0.5;
     double p5b = 0.5;
     double vies5 = -2.5;
     vector<double> x5 = {1.0,3.2};
@@ -53,17 +49,15 @@ int main(){
     //entrada com origme em saídas de neurônios anteriormente preditos
     Neuronio *n6 = new NeuronioReLU({p5a, p5b},vies5);
         //entrando resultado de predict anteriormente calculado;
-        vector<double> x6 = {i4,i5};       
+        vector<double> x6 = {i3,i5};       
         double i6 = n6 -> predict(x6);
         cout<< i6 << endl;
     delete n6;
     
     Neuronio *n7 = new NeuronioReLU({p5a, p5b},vies5);
-        double i7 = n7->predict({3.2,2.0});
+        double i7 = n7->predict({8.2,10.0});
         cout<< i7 << endl;
     delete n7;
 
     NeuronioReLU aNeuronioReLU;
 }
-
-
